@@ -142,17 +142,172 @@ The following is a JSON that uses values from the examples above:
 
 Putting everything together, the Python code to create a schedule is as follows:
 
+```python
+import requests
+import json
 
 
+API_URL = "https://data.oxylabs.io/v1/schedules"
 
 
+payload = json.dumps(
+    {
+        "cron": "0 16 * * *",
+        "items": [
+            {
+                "source": "amazon_product",
+                "query": "B098FKXT8L",
+                "parse": True,
+            }
+        ],
+        "end_time": "2032-12-01 16:00:00",
+    }
+)
+headers = {
+    "content-type": "application/json",
+    "Authorization": "Basic c2FtcGxldXNlcjpzYW1wbGVwd2Q=",
+}
 
 
+response = requests.post(API_URL, headers=headers, data=payload)
 
 
+print(response.text)
+```
+
+If you run this file, you’ll see the following message:
+
+```python
+{
+    "schedule_id": 3809594044634907291,
+    "active": true,
+    "items_count": 1,
+    "cron": "0 16 * * *",
+    "end_time": "2032-12-01 16:00:00",
+    "next_run_at": "2023-04-05 16:00:00",
+    # more info
+}
+```
+
+Here you can see the schedule ID. You can use the schedule ID to check the status or to disable the schedule.
+
+Now, let’s capture the output of this schedule using callbacks and cloud storage. 
+
+## Schedules with callbacks and cloud storage
+
+You can use a callback URL that receives the output when a scheduled job executes. Amazon Scraper API sends a POST request to this callback when scraping is complete.
+
+You can also upload your results to cloud storage – Amazon S3 or Google Cloud Storage (GCS).
+
+**NOTE**: it’s convenient to use Scheduler with the upload to cloud storage feature to receive regular data updates without trying to fetch results from our system.
+
+To use GCS, send `storage_type` as `gcs` and set `storage_url` as your GCS bucket name.
+
+To use S3, send `storage_type` as `s3` and set the `storage_url` as your S3 bucket URL.
+
+The following example shows how to use a callback URL with S3:
+
+```python
+{
+    "cron": "0 16 * * *",
+    "items": [
+        {
+            "source": "amazon",
+            "url": "https://www.amazon.com/dp/B098FKXT8L",
+            "callback_url": "https://callback.site/path",
+            "storage_type": "s3",
+            "storage_url": "s3://yourown.s3.bucket/path",
+        }
+    ],
+    "end_time": "2032-12-01 16:00:00",
+}
+```
+
+## Getting schedule information
+
+When you create a schedule, the output contains `schedule_id`. This ID is a number similar to `1234567890987654321`.
+
+You can send a GET request to `https://data.oxylabs.io/v1/schedules/{id}` to get the details of a schedule:
+
+```python
+import requests
 
 
+schedule_id = "1234567890987654321"
+url = "https://data.oxylabs.io/v1/schedules/{id}"
 
 
+headers = {"Authorization": "Basic c2FtcGxldXNlcjpzYW1wbGVwd2Q="}
+response = requests.get(url, headers=headers)
+print(response.text)
+```
+
+If you run this file, the output will be as follows:
+
+```python
+{
+    "schedule_id": 1234567890987654321,
+    "active": true,
+    "items_count": 1,
+    "cron": "0 16 * * *",
+    "end_time": "2032-12-01 16:00:00",
+    "next_run_at": "2023-12-02 16:00:00",
+    "stats": {
+        "total_job_count": 8,
+        "job_create_outcomes": [{"status_code": 202, "job_count": 8, "ratio": 1}],
+        "job_result_outcomes": [{"status": "done", "job_count": 8, "ratio": 1}],
+    },
+}
+```
+
+Here is some of the key information in this output:
+
+- `active: true` – the schedule is active.
+- `total_job_count` – the total number of items in this schedule.
+- `job_create_outcomes` – stats related to job creation.
+- `job_result_outcomes` – an outcome for the scraping and parsing jobs performed as part of this schedule.
+
+For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/scheduler#get-schedule-information). 
+
+If you want to get a list of all schedules, you can send a GET request to the following API endpoint: `https://data.oxylabs.io/v1/schedules`.
+
+It’ll return a list of IDs for all schedules.
+
+## Deactivating or reactivating a schedule
+
+Notice how the schedule information API endpoint returns the schedule status in the `active` field.
+
+You can use the API endpoint, `https://data.oxylabs.io/v1/schedules/{schedule_id}/state`, to activate or deactivate a schedule.
+
+Note that this is a PUT request.
+
+```python
+schedule_id = "1234567890987654321"
+API_URL = f"https://data.oxylabs.io/v1/schedules/{schedule_id}/state"
 
 
+payload = json.dumps({"active": False})
+headers = {
+    "content-type": "application/json",
+    "Authorization": "Basic c2FtcGxldXNlcjpzYW1wbGVwd2Q=",
+}
+
+
+response = requests.put(API_URL, headers=headers, data=payload)
+```
+
+A successful API call returns the HTTP status code `202` with an empty response.
+
+If you wish to activate this schedule later, use the same API call but send `active` as true:
+
+```python
+payload = json.dumps({"active": True})
+```
+
+## Wrapping up
+
+You can try Scheduler’s functionality with a one-week free trial of our [<u>Scraper APIs</u>](https://oxylabs.io/products/scraper-api).
+
+Be cautious about the service bills when setting extensive schedules. Make sure to test a job with a few items and limited repeats to ensure you get the expected result. Once verified, stop the test schedule and create a new, scaled-up schedule. 
+
+If you have questions about the process, contact us at support@oxylabs.io or via the live chat on our [<u>homepage</u>](https://oxylabs.io/).
