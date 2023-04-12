@@ -83,7 +83,7 @@ You’ll need the following information to create a schedule:
 - Your username and password.
 - A payload with parameters.
 
-The API endpoint to create schedules: https://data.oxylabs.io/v1/schedules. 
+The API endpoint to create schedules: `https://data.oxylabs.io/v1/schedules`. 
 
 You’ll get your username and password when you sign up for a Scraper API. 
 
