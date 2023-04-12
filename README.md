@@ -15,9 +15,9 @@ Based on your input, Scheduler:
 
 To create a schedule, define three points:
 
-1. Submit a cron schedule expression to specify the frequency of repetition.
-2. Pass a set of job parameters to execute at scheduled times.
-3. Submit an end time to indicate when to stop.
+1. Submit a **cron schedule expression** to specify the frequency of repetition.
+2. Pass a set of **job parameters** to execute at scheduled times.
+3. Submit an **end time** to indicate when to stop.
 
 ## Job setup
 
