@@ -2,6 +2,8 @@
 
 [![Oxylabs promo code](https://user-images.githubusercontent.com/129506779/250792357-8289e25e-9c36-4dc0-a5e2-2706db797bb5.png)](https://oxylabs.go2cloud.org/aff_c?offer_id=7&aff_id=877&url_id=112)
 
+[![](https://dcbadge.vercel.app/api/server/eWsVUJrnG5)](https://discord.gg/GbxmdGhZjq)
+
 [<u>Scheduler</u>](https://oxylabs.io/features/scheduler), an add-on to Oxylabs Scraper APIs, allows you to automate recurring scraping and parsing jobs by creating schedules. The main purpose – avoiding tedious repetition and saving time.
 
 The scheduling intervals, ranging from minutes to days, eliminate the need for sending new requests with the same parameters. If you intend to create a periodic task, create a payload once, schedule the job, and Scheduler will take care of the recurrence.
