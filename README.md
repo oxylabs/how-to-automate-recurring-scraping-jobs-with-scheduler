@@ -226,6 +226,10 @@ The following example shows how to use a callback URL with S3:
     "end_time": "2032-12-01 16:00:00",
 }
 ```
+The `storage_url` parameter also supports template variables for dynamic file and folder naming. You can use variables like `{{ source }}`, `{{ query }}`, `{{ job_id }}`, and `{{ extension }}` to create organized file structures based on your job parameters, like in the following example:
+```
+ "storage_url": "s3://yourown.s3.bucket/{{ source }}/scheduled_{{ job_id }}.{{ extension }}",
+```
 
 ## Getting schedule information
 
