@@ -201,7 +201,7 @@ Now, let’s capture the output of this schedule using callbacks and cloud stora
 
 You can use a callback URL that receives the output when a scheduled job executes. Amazon Scraper API sends a POST request to this callback when scraping is complete.
 
-You can also upload your results to cloud storage – Amazon S3 or Google Cloud Storage (GCS).
+You can also upload your results to cloud storage – Amazon S3, Google Cloud Storage (GCS), Alibaba Cloud OSS, or other S3-compatible destinations.
 
 **NOTE**: it’s convenient to use Scheduler with the upload to cloud storage feature to receive regular data updates without trying to fetch results from our system.
 
