@@ -25,11 +25,11 @@ To create a schedule, define three points:
 
 ## Job setup
 
-The following is a quick overview of what to expect when working with Scheduler. You can find all the endpoints, parameters, and values with in-depth explanations in our [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/scheduler).
+The following is a quick overview of what to expect when working with Scheduler. You can find all the endpoints, parameters, and values with in-depth explanations in our [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler).
 
 ### Endpoints
 
-You can use endpoints to communicate with our APIs. Scheduler has a number of [<u>endpoints</u>](https://developers.oxylabs.io/scraper-apis/scheduler#endpoints) you can use to control the process:
+You can use endpoints to communicate with our APIs. Scheduler has a number of [<u>endpoints</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#endpoints) you can use to control the process:
 
 - Create a new schedule.
 - Get a list of your schedules.
@@ -38,7 +38,7 @@ You can use endpoints to communicate with our APIs. Scheduler has a number of [<
 
 ### Job parameters
 
-You can provide a set of parameters to be executed as part of a schedule. The parameters depend on a scraping target. Make sure to refer to the documentation of the specific scraper ([<u>Google</u>](https://developers.oxylabs.io/scraper-apis/serp-scraper-api/google), [<u>Amazon</u>](https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon), etc.).
+You can provide a set of parameters to be executed as part of a schedule. The parameters depend on a scraping target. Make sure to refer to the documentation of the specific scraper ([<u>Google</u>](https://developers.oxylabs.io/api-targets/search-engines/google), [<u>Amazon</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon), etc.).
 
 ### Communication methods
 
@@ -75,7 +75,7 @@ response = requests.post(
 print(response.json())
 ```
 
-To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data) and review the [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon).
+To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data) and review the [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
 
 This guide will showcase how to create schedules instead of calling the API  directly.
 
@@ -121,7 +121,7 @@ The items in this list are the payload you would send to the API:
 {"source": "amazon_product", "query": "B098FKXT8L", "parse": True}
 ```
 
-Send the same payload as `items` to Scheduler. For more information about the possible job parameter values, see our [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/e-commerce-scraper-api/amazon).
+Send the same payload as `items` to Scheduler. For more information about the possible job parameter values, see our [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
 
 ### `end_time`
 
@@ -275,7 +275,7 @@ Here is some of the key information in this output:
 - `job_create_outcomes` – stats related to job creation.
 - `job_result_outcomes` – an outcome for the scraping and parsing jobs performed as part of this schedule.
 
-For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/scraper-apis/scheduler#get-schedule-information). 
+For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#get-schedule-info). 
 
 If you want to get a list of all schedules, you can send a GET request to the following API endpoint: `https://data.oxylabs.io/v1/schedules`.
 
