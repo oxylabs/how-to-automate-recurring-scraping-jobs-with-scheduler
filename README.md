@@ -275,7 +275,7 @@ Here is some of the key information in this output:
 - `job_create_outcomes` – stats related to job creation.
 - `job_result_outcomes` – an outcome for the scraping and parsing jobs performed as part of this schedule.
 
-For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#get-schedule-info). 
+For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#get-schedule-information). 
 
 If you want to get a list of all schedules, you can send a GET request to the following API endpoint: `https://data.oxylabs.io/v1/schedules`.
 
