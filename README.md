@@ -1,6 +1,6 @@
 # How to Automate Recurring Scraping Jobs With Scheduler
 
-[![Oxylabs promo code](https://raw.githubusercontent.com/oxylabs/product-integrations/refs/heads/master/Affiliate-Universal-1090x275.png)](https://oxylabs.io/pages/gitoxy?utm_source=877&utm_medium=affiliate&groupid=877&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler-github&transaction_id=102f49063ab94276ae8f116d224b67)
+[![Oxylabs promo code](https://raw.githubusercontent.com/oxylabs/product-integrations/refs/heads/master/Affiliate-Universal-1090x275.png)](https://oxylabs.io/pages/gitoxy?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&utm_campaign=banner&groupid=877)
 
 <p align="left">
   <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%9A%80_Get_Started-FF6B35?style=for-the-badge" alt="Get started"></a>
@@ -10,7 +10,7 @@
   <a href="https://www.youtube.com/@oxylabs"><img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F_YouTube-FF0000?style=for-the-badge" alt="YouTube"></a>
 </p>
 
-[<u>Scheduler</u>](https://oxylabs.io/features/scheduler), an add-on to Oxylabs Scraper APIs, allows you to automate recurring scraping and parsing jobs by creating schedules. The main purpose – avoiding tedious repetition and saving time.
+[<u>Scheduler</u>](https://oxylabs.io/features/scheduler?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877), an add-on to Oxylabs Scraper APIs, allows you to automate recurring scraping and parsing jobs by creating schedules. The main purpose – avoiding tedious repetition and saving time.
 
 The scheduling intervals, ranging from minutes to days, eliminate the need for sending new requests with the same parameters. If you intend to create a periodic task, create a payload once, schedule the job, and Scheduler will take care of the recurrence.
 
@@ -56,7 +56,7 @@ For the Python tutorial covering all functions of Scheduler, see the following s
 
 ## Automating a job using Amazon Scraper API and Python
 
-Before continuing, let's review how to fetch product information from Amazon using [<u>Amazon Scraper API</u>](https://oxylabs.io/products/scraper-api/ecommerce/amazon).
+Before continuing, let's review how to fetch product information from Amazon using [<u>Amazon Scraper API</u>](https://oxylabs.io/products/scraper-api/ecommerce/amazon?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
 
 The typical code to fetch products from Amazon Scraper API is as follows:
 
@@ -81,7 +81,7 @@ response = requests.post(
 print(response.json())
 ```
 
-To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data) and review the [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
+To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877) and review the [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
 
 This guide will showcase how to create schedules instead of calling the API  directly.
 
@@ -320,8 +320,8 @@ payload = json.dumps({"active": True})
 
 ## Wrapping up
 
-You can try Scheduler’s functionality with a one-week free trial of our [<u>Scraper APIs</u>](https://oxylabs.io/products/scraper-api).
+You can try Scheduler’s functionality with a one-week free trial of our [<u>Scraper APIs</u>](https://oxylabs.io/products/scraper-api?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
 
 Be cautious about the service bills when setting extensive schedules. Make sure to test a job with a few items and limited repeats to ensure you get the expected result. Once verified, stop the test schedule and create a new, scaled-up schedule. 
 
-If you have questions about the process, contact us at support@oxylabs.io or via the live chat on our [<u>homepage</u>](https://oxylabs.io/).
+If you have questions about the process, contact us at support@oxylabs.io or via the live chat on our [<u>homepage</u>](https://oxylabs.io/?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
