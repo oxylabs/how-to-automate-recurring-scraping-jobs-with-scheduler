@@ -4,7 +4,7 @@
 
 <p align="left">
   <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%9A%80_Get_Started-FF6B35?style=for-the-badge" alt="Get started"></a>
-  <a href="https://developers.oxylabs.io/products/web-api"><img src="https://img.shields.io/badge/%F0%9F%93%9A_Documentation-4A90E2?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://developers.oxylabs.io/products/web-api?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&utm_campaign=banner&groupid=877"><img src="https://img.shields.io/badge/%F0%9F%93%9A_Documentation-4A90E2?style=for-the-badge" alt="Documentation"></a>
   <a href="https://dashboard.oxylabs.io"><img src="https://img.shields.io/badge/%F0%9F%93%8A_Dashboard-2EA44F?style=for-the-badge" alt="Dashboard"></a>
   <a href="https://discord.gg/Pds3gBmKMH"><img src="https://img.shields.io/badge/%F0%9F%92%AC_Discord-5865F2?style=for-the-badge" alt="Discord"></a>
   <a href="https://www.youtube.com/@oxylabs"><img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F_YouTube-FF0000?style=for-the-badge" alt="YouTube"></a>
@@ -31,11 +31,11 @@ To create a schedule, define three points:
 
 ## Job setup
 
-The following is a quick overview of what to expect when working with Scheduler. You can find all the endpoints, parameters, and values with in-depth explanations in our [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler).
+The following is a quick overview of what to expect when working with Scheduler. You can find all the endpoints, parameters, and values with in-depth explanations in our [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
 
 ### Endpoints
 
-You can use endpoints to communicate with our APIs. Scheduler has a number of [<u>endpoints</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#endpoints) you can use to control the process:
+You can use endpoints to communicate with our APIs. Scheduler has a number of [<u>endpoints</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877#endpoints) you can use to control the process:
 
 - Create a new schedule.
 - Get a list of your schedules.
@@ -44,7 +44,7 @@ You can use endpoints to communicate with our APIs. Scheduler has a number of [<
 
 ### Job parameters
 
-You can provide a set of parameters to be executed as part of a schedule. The parameters depend on a scraping target. Make sure to refer to the documentation of the specific scraper ([<u>Google</u>](https://developers.oxylabs.io/api-targets/search-engines/google), [<u>Amazon</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon), etc.).
+You can provide a set of parameters to be executed as part of a schedule. The parameters depend on a scraping target. Make sure to refer to the documentation of the specific scraper ([<u>Google</u>](https://developers.oxylabs.io/api-targets/search-engines/google?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877), [<u>Amazon</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877), etc.).
 
 ### Communication methods
 
@@ -81,7 +81,7 @@ response = requests.post(
 print(response.json())
 ```
 
-To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877) and review the [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
+To learn more about scraping Amazon product data, see our [<u>blog post</u>](https://oxylabs.io/blog/how-to-scrape-amazon-product-data?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877) and review the [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
 
 This guide will showcase how to create schedules instead of calling the API  directly.
 
@@ -127,7 +127,7 @@ The items in this list are the payload you would send to the API:
 {"source": "amazon_product", "query": "B098FKXT8L", "parse": True}
 ```
 
-Send the same payload as `items` to Scheduler. For more information about the possible job parameter values, see our [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon).
+Send the same payload as `items` to Scheduler. For more information about the possible job parameter values, see our [<u>documentation</u>](https://developers.oxylabs.io/api-targets/e-commerce/amazon?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877).
 
 ### `end_time`
 
@@ -281,7 +281,7 @@ Here is some of the key information in this output:
 - `job_create_outcomes` – stats related to job creation.
 - `job_result_outcomes` – an outcome for the scraping and parsing jobs performed as part of this schedule.
 
-For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler#get-schedule-information). 
+For more details, see the [<u>documentation</u>](https://developers.oxylabs.io/products/web-scraper-api/features/scheduler?utm_source=github&utm_medium=referral&utm_content=how-to-automate-recurring-scraping-jobs-with-scheduler&groupid=877#get-schedule-information). 
 
 If you want to get a list of all schedules, you can send a GET request to the following API endpoint: `https://data.oxylabs.io/v1/schedules`.
 
